@@ -26,7 +26,7 @@ public class UserResource {
     private final UserRepository userRepository;
     private final Validator validator;
 
-
+    //ADICIONAR DEPENDENCIA "quarkus-rest-jackson" PARA SER O JSON
     @POST
     @Transactional
     public Response createUser(@Valid UserRequest userRequest){
