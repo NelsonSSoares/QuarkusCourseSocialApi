@@ -1,15 +1,13 @@
 package org.acme.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "user")
 public class User  {
 
     //PanacheEntityBase é a classe que tem metodos de persistencia,
@@ -21,9 +19,6 @@ public class User  {
     private String name;
     @NotNull(message = "Age is required")
     private Integer age;
-
-
-
 
 
 }

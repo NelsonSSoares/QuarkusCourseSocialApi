@@ -26,7 +26,7 @@ public class UserResource {
     private final UserRepository userRepository;
     private final Validator validator;
 
-    //ADICIONAR DEPENDENCIA "quarkus-rest-jackson" PARA SER O JSON
+    //ADICIONAR DEPENDENCIA "rest-jackson" PARA LER O JSON
     @POST
     @Transactional
     public Response createUser(@Valid UserRequest userRequest){
@@ -41,6 +41,7 @@ public class UserResource {
         User user = new User();
         user.setName(userRequest.getName());
         user.setAge(userRequest.getAge());
+        System.out.println(userRequest);
         userRepository.persist(user);
         return Response.status(Response.Status.CREATED).entity(user).build();
 
