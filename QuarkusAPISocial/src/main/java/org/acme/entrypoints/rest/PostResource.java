@@ -9,8 +9,11 @@ import jakarta.ws.rs.core.Response;
 import org.acme.domain.model.Post;
 import org.acme.domain.model.User;
 import org.acme.domain.model.dto.CreatePostRequest;
+import org.acme.domain.model.dto.PostResponse;
 import org.acme.domain.repository.PostRepository;
 import org.acme.domain.repository.UserRepository;
+
+import java.util.stream.Collectors;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -43,6 +46,13 @@ public class PostResource {
         if (user == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.ok().build();
+        //para fazer ordenação
+        //var query = postRepository.find("user",Sort.by("dateTime"), user);
+
+        var query = postRepository.find("user", user);
+        var list = query.list();
+        var postResponse = list.stream().map(post -> PostResponse.fromEntity(post)).collect(Collectors.toList());
+        //.map(PostResponse::fromEntity).collect(Collectors.toList());
+        return Response.ok(postResponse).build();
     }
 }

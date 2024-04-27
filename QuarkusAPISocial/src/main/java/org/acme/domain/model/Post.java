@@ -17,4 +17,9 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @PrePersist //executado antes de persistir no banco
+    public void prePersist() {
+        setDateTime(LocalDateTime.now());
+    }
 }
