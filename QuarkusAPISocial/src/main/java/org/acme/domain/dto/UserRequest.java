@@ -1,4 +1,4 @@
-package org.acme.domain.model.dto;
+package org.acme.domain.dto;
 
 public class UserRequest {
     private String name;

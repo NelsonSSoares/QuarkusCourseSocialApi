@@ -1,7 +1,6 @@
 package org.acme.entrypoints.rest;
 
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
-import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Valid;
@@ -10,8 +9,8 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
-import org.acme.domain.model.User;
-import org.acme.domain.model.dto.UserRequest;
+import org.acme.domain.entities.User;
+import org.acme.domain.dto.UserRequest;
 import org.acme.domain.repository.UserRepository;
 import org.acme.exceptions.ResponseError;
 

@@ -6,10 +6,10 @@ import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.acme.domain.model.Post;
-import org.acme.domain.model.User;
-import org.acme.domain.model.dto.CreatePostRequest;
-import org.acme.domain.model.dto.PostResponse;
+import org.acme.domain.entities.Post;
+import org.acme.domain.entities.User;
+import org.acme.domain.dto.CreatePostRequest;
+import org.acme.domain.dto.PostResponse;
 import org.acme.domain.repository.PostRepository;
 import org.acme.domain.repository.UserRepository;
 

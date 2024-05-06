@@ -1,7 +1,7 @@
-package org.acme.domain.model.dto;
+package org.acme.domain.dto;
 
 import lombok.Data;
-import org.acme.domain.model.Post;
+import org.acme.domain.entities.Post;
 
 import java.time.LocalDateTime;
 
