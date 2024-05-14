@@ -1,4 +1,4 @@
-package org.acme.rest;
+package org.acme.entrypoints.rest;
 
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -58,6 +58,9 @@ public class FollowersResource {
         if (user == null){
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+
+
+
         var list = followersRepository.findByUser(userId);
         FollowerPerUserResponse responseObject = new FollowerPerUserResponse();
         responseObject.setFollowersCount(list.size());
