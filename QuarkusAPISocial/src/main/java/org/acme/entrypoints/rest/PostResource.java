@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 @Path("/users/{userId}/posts")
 public class PostResource {
 
+
     @Inject
     private UserRepository userRepository;
 
