@@ -27,7 +27,7 @@ class UserResourceTest {
 
     @Test
     @DisplayName("should create a user successfully")
-    @Order(1) //define a ordem de execução do teste
+    @Order(2) //define a ordem de execução do teste
     public void createUserTest() {
         var user = new UserRequest("Billy Joe",30);
 
@@ -45,7 +45,7 @@ class UserResourceTest {
 
     @Test
     @DisplayName("should return error when json is not valid")
-    @Order(2)
+    @Order(3)
     public void createUserValidationErrorTest(){
 
 
@@ -69,7 +69,7 @@ class UserResourceTest {
 
     @Test
     @DisplayName("should list all users")
-    @Order(3)
+    @Order(4)
     public void listAllUsersTest(){
         var response = given()
                             .contentType(ContentType.JSON)
